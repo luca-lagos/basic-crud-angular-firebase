@@ -1,0 +1,128 @@
+.show-options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 60px 20px 60px;
+    background-color: var(--background-dark);
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 25px;
+}
+
+.show-options input{
+    width: 75%;
+    height: auto;
+    padding: 10px 15px 10px 15px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--color-table-light);
+}
+
+.show-options a{
+    width: 20%;
+    background-color: var(--color-principal);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid white;
+    text-align: center;
+    font-weight: bold;
+    transition: all .4s ease;
+}
+
+.show-options a:hover{
+    background-color: var(--color-principal-dark);
+}
+
+.show-content{
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto 25px auto;
+    padding: 0;
+    table-layout: fixed;
+    border-radius: 5px;
+}
+
+.show-content thead{
+    background-color: var(--color-alternative-dark);
+}
+
+.show-content thead tr{
+    font-size: 17px;
+    height: 40px;
+    font-weight: bold;
+    color: var(--color-table-light);
+}
+
+.show-content thead tr th:first-child{
+    border-top-left-radius: 5px;
+}
+
+.show-content thead tr th:last-child{
+    border-top-right-radius: 5px;
+}
+
+.show-content tbody tr{
+    font-size: 15px;
+    font-weight: bold;
+    height: 40px;
+    background-color: var(--color-table-dark);
+    color: var(--color-table-light);
+    text-align: center;
+    cursor: default;
+    transition: all .4s ease;
+}
+
+.show-content tbody tr:nth-child(even){
+   background-color: var(--color-table-light);
+   color: var(--color-table-dark); 
+}
+
+.show-content tbody tr:last-child{
+    margin-bottom: 50px;
+}
+
+.show-content tbody tr:last-child td:first-child{
+    border-bottom-left-radius: 5px;
+}
+
+.show-content tbody tr:last-child td:last-child{
+    border-bottom-right-radius: 5px;
+}
+
+.show-content tbody tr:hover{
+    background-color: var(--background-dark);
+    color: var(--color-table-light);
+}
+
+.show-content tbody tr td a{
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.show-content tbody tr td a.button-edit{
+    padding-right: 20px;
+    color: var(--color-alternative);
+    transition: all .4s ease;
+}
+
+.show-content tbody tr td a.button-edit i{
+    padding-right: 20px;
+    color: var(--color-alternative);
+    transition: all .4s ease;
+}
+
+.show-content tdody tr td a.button-edit i:hover{
+    color: var(--color-alternative-dark);
+}
+
+.show-content tbody tr td a.button-delete{
+    color: var(--color-principal);
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.show-content tdody tr td a.button-delete:hover{
+    color: var(--color-principal-dark);
+}
