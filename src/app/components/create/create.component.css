@@ -15,7 +15,7 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-principal-dark);
+    background-color: var(--color-table-light);
     width: 70%;
     height: auto;
     margin: 0 auto;
