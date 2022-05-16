@@ -32,10 +32,14 @@ form .edit-field{
     width: 90%;
 }
 
+form .edit-field:first-child{
+    margin-top: 10px;
+}
+
 form .edit-field h2{
     font-size: 20px;
     font-weight: bold;
-    color: white;
+    color: var(--color-alternative-dark);
     margin-bottom: 10px;
 }
 
@@ -55,7 +59,7 @@ form .edit-field .edit-input i{
     border-radius: 7px 0 0 7px;
     text-align: center;
     font-size: 20px;
-    color: var(--color-table-light);
+    color: var(--color-alternative-dark);
 }
 
 form .edit-field .edit-input input{
@@ -72,7 +76,20 @@ form .edit-field textarea{
     border: 2px solid transparent;
     border-radius: 7px;
     font-size: 17px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+form .edit-error{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+form .edit-error label{
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
 }
 
 form .edit-buttons{
@@ -81,6 +98,7 @@ form .edit-buttons{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 

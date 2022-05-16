@@ -1,27 +1,74 @@
 <div class="edit-title">
-    <h1>Edit task</h1>
+  <h1>Edit task</h1>
+</div>
+<form action="" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div class="edit-field">
+    <h2>Title</h2>
+    <div class="edit-input">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" formControlName="title" id="" required />
+    </div>
+    <div
+      class="edit-error"
+      *ngIf="
+        editForm.controls['title'].invalid &&
+        (editForm.controls['title'].dirty || editForm.controls['title'].touched)
+      "
+    >
+      <label for="title" *ngIf="editForm.controls['title'].errors['required']">
+        * El campo esta vacio
+      </label>
+    </div>
   </div>
-  <form action="" [formGroup]="editForm" (ngSubmit)="onSubmit()">
-    <div class="edit-field">
-      <h2>Title</h2>
-      <div class="edit-input">
-          <i class="fa-solid fa-user"></i>
-        <input type="text" formControlName="title" id="" required/>
-      </div>
+  <div class="edit-field">
+    <h2>Author</h2>
+    <div class="edit-input">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" formControlName="author" id="" required />
     </div>
-    <div class="edit-field">
-      <h2>Author</h2>
-      <div class="edit-input">
-          <i class="fa-solid fa-user"></i>
-        <input type="text" formControlName="author" id="" required/>
-      </div>
+    <div
+      class="edit-error"
+      *ngIf="
+        editForm.controls['author'].invalid &&
+        (editForm.controls['author'].dirty ||
+          editForm.controls['author'].touched)
+      "
+    >
+      <label
+        for="author"
+        *ngIf="editForm.controls['author'].errors['required']"
+      >
+        * El campo esta vacio
+      </label>
     </div>
-    <div class="edit-field">
-      <h2>Description</h2>
-      <textarea formControlName="description" id="" cols="30" rows="10" required></textarea>
+  </div>
+  <div class="edit-field">
+    <h2>Description</h2>
+    <textarea
+      formControlName="description"
+      id=""
+      cols="30"
+      rows="10"
+      required
+    ></textarea>
+    <div
+      class="edit-error"
+      *ngIf="
+        editForm.controls['description'].invalid &&
+        (editForm.controls['description'].dirty ||
+          editForm.controls['description'].touched)
+      "
+    >
+      <label
+        for="description"
+        *ngIf="editForm.controls['description'].errors['required']"
+      >
+        * El campo esta vaciotitle
+      </label>
     </div>
-    <div class="edit-buttons">
-      <a routerLink="/">Cancel</a>
-      <input type="submit" value="Edit" [disabled]="!editForm.valid"/>
-    </div>
-  </form>
+  </div>
+  <div class="edit-buttons">
+    <a routerLink="/">Cancel</a>
+    <input type="submit" value="Edit" [disabled]="!editForm.valid" />
+  </div>
+</form>

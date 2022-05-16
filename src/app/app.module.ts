@@ -15,7 +15,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //Environment config import
 import { environment } from 'src/environments/environment';
 
+//Popup alerts
+import { NgToastModule } from 'ng-angular-popup';
 
+//Components
 import { ShowComponent } from './components/show/show.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
@@ -29,7 +32,8 @@ import { EditComponent } from './components/edit/edit.component';
     AngularFireAuthModule,
     AngularFirestoreModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,23 +5,70 @@
   <div class="create-field">
     <h2>Title</h2>
     <div class="create-input">
-        <i class="fa-solid fa-user"></i>
-      <input type="text" formControlName="title" id="" required/>
+      <i class="fa-solid fa-user"></i>
+      <input type="text" formControlName="title" id="" required />
+    </div>
+    <div
+      class="create-error"
+      *ngIf="
+        taskForm.controls['title'].invalid &&
+        (taskForm.controls['title'].dirty || taskForm.controls['title'].touched)
+      "
+    >
+      <label for="title" *ngIf="taskForm.controls['title'].errors['required']">
+        * El campo esta vacio
+      </label>
     </div>
   </div>
   <div class="create-field">
     <h2>Author</h2>
     <div class="create-input">
-        <i class="fa-solid fa-user"></i>
-      <input type="text" formControlName="author" id="" required/>
+      <i class="fa-solid fa-user"></i>
+      <input type="text" formControlName="author" id="" required />
     </div>
+    <div
+        class="create-error"
+        *ngIf="
+          taskForm.controls['author'].invalid &&
+          (taskForm.controls['author'].dirty ||
+            taskForm.controls['author'].touched)
+        "
+      >
+        <label
+          for="author"
+          *ngIf="taskForm.controls['author'].errors['required']"
+        >
+          * El campo esta vacio
+        </label>
+      </div>
   </div>
   <div class="create-field">
     <h2>Description</h2>
-    <textarea formControlName="description" id="" cols="30" rows="10" required></textarea>
+    <textarea
+      formControlName="description"
+      id=""
+      cols="30"
+      rows="10"
+      required
+    ></textarea>
+    <div
+      class="create-error"
+      *ngIf="
+        taskForm.controls['description'].invalid &&
+        (taskForm.controls['description'].dirty ||
+          taskForm.controls['description'].touched)
+      "
+    >
+      <label
+        for="description"
+        *ngIf="taskForm.controls['description'].errors['required']"
+      >
+        * El campo esta vacio
+      </label>
+    </div>
   </div>
   <div class="create-buttons">
     <a routerLink="/">Cancel</a>
-    <input type="submit" value="Create" [disabled]="!taskForm.valid"/>
+    <input type="submit" value="Create" [disabled]="!taskForm.valid" />
   </div>
 </form>
