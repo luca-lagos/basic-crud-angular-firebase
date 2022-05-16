@@ -9,8 +9,6 @@ import {
 } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { NgToastService } from 'ng-angular-popup';
-
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -23,8 +21,7 @@ export class EditComponent implements OnInit {
     public taskService: TaskService,
     public formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private router: Router,
-    public toast: NgToastService
+    private router: Router
   ) {
     this.editForm = this.formBuilder.group({
       title: new FormControl('', [Validators.required]),
@@ -49,10 +46,5 @@ export class EditComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.taskService.updateTask(this.editForm.value, id);
     this.router.navigate(['']);
-    this.toast.success({
-      detail: 'SUCCESS',
-      summary: 'Your task has been created',
-      duration: 5000,
-    });
   }
 }

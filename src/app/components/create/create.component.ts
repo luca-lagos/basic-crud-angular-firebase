@@ -9,8 +9,6 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { NgToastService } from 'ng-angular-popup';
-
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -22,8 +20,7 @@ export class CreateComponent implements OnInit {
   constructor(
     public taskService: TaskService,
     public formBuilder: FormBuilder,
-    public router: Router,
-    public toast: NgToastService
+    public router: Router
   ) {
     this.taskForm = this.formBuilder.group({
       title: new FormControl('', [Validators.required]),
@@ -37,10 +34,5 @@ export class CreateComponent implements OnInit {
   onSubmit() {
     this.taskService.createTask(this.taskForm.value);
     this.router.navigate(['']);
-    this.toast.success({
-      detail: 'SUCCESS',
-      summary: 'Your task has been created',
-      duration: 5000,
-    });
   }
 }
